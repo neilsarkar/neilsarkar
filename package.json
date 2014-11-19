@@ -4,7 +4,8 @@
   "description": "Neil Sarkar's Personal Website",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "postinstall": "bower install && gulp build",
+    "start": "node app.js",
     "test": "./node_modules/karma/bin/karma start test/karma.conf.js"
   },
   "repository": {
@@ -34,5 +35,8 @@
   "dependencies": {
     "bower": "^1.3.12",
     "express": "^4.10.2"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
