@@ -1,0 +1,13 @@
+{
+  "js": [
+    "bower_components/angular/angular.min.js",
+    "bower_components/angular-route/angular-route.min.js",
+    "bower_components/underscore/underscore-min.js",
+    "app/js/modules.js",
+    "app/js/**/*.js"
+  ],
+  "css": [
+    "bower_components/bootstrap/dist/css/bootstrap.min.css",
+    "app/css/*.scss"
+  ]
+}
