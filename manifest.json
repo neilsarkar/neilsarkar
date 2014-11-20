@@ -8,6 +8,10 @@
   ],
   "css": [
     "bower_components/bootstrap/dist/css/bootstrap.min.css",
-    "app/css/*.scss"
+    "app/css/**/*.scss"
+  ],
+  "html": [
+    "app/templates/**/*.html",
+    "app/index.html"
   ]
 }

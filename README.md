@@ -5,6 +5,7 @@ You love it.
 
 sawdust:
 
-* browsersync
+* don't require browsersync in production
+* don't recompile scripts when html changes
 * fix underscore.min.map
-* uirouter
+* angular-material
