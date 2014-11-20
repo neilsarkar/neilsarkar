@@ -1,9 +1,10 @@
-_Neil Sarkar's Personal Website_
+Neil Sarkar's Personal Website
+==
 
 You love it.
+--
 
-
-sawdust:
+*Sawdust*
 
 * don't require browsersync in production
 * don't recompile scripts when html changes
