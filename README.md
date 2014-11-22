@@ -10,3 +10,4 @@ You love it.
 * don't recompile scripts when html changes
 * fix underscore.min.map
 * angular-material
+* move dist out of app folder

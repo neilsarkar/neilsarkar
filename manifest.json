@@ -13,5 +13,8 @@
   "html": [
     "app/templates/**/*.html",
     "app/index.html"
+  ],
+  "img": [
+    "app/img/**/*.*"
   ]
 }

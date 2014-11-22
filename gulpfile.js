@@ -20,11 +20,17 @@ gulp.task('stylesheets', function() {
     pipe(browserSync.reload({stream: true}));
 })
 
+gulp.task('images', function() {
+  return gulp.src(paths.img).
+    pipe(gulp.dest('app/dist/images/'))
+})
+
 gulp.task('watch', function() {
   gulp.watch(paths.js, ['scripts', browserSync.reload])
   gulp.watch(paths.css, ['stylesheets'])
   // TODO: don't compile scripts. if we remove this, browsersync behaves strangely.
   gulp.watch(paths.html, ['scripts', browserSync.reload])
+  gulp.watch(paths.img, ['scripts', browserSync.reload])
 })
 
 gulp.task('server', function() {
@@ -40,5 +46,5 @@ gulp.task('server', function() {
   gulp.watch(['app.js'], [server.run])
 })
 
-gulp.task('build', ['scripts', 'stylesheets'])
-gulp.task('default', ['scripts', 'stylesheets', 'server', 'watch'])
+gulp.task('build', ['scripts', 'stylesheets', 'images'])
+gulp.task('default', ['scripts', 'stylesheets', 'images', 'server', 'watch'])
