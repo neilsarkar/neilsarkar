@@ -11,3 +11,4 @@ You love it.
 * fix underscore.min.map
 * angular-material
 * move dist out of app folder
+* pick up changes to manifest.json and reload appropriately

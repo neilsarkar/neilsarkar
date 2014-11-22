@@ -1,1 +1,1 @@
-angular.module('neil', ['ngRoute'])
+angular.module('neil', ['ngRoute', 'ngMaterial'])
