@@ -12,3 +12,5 @@ You love it.
 * angular-material
 * move dist out of app folder
 * pick up changes to manifest.json and reload appropriately
+* don't blow up on scss errors
+* rename app.js to avoid tab issue in terminal with 'app'

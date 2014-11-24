@@ -4,7 +4,8 @@ angular.module('neil').config([
 
     $routeProvider.
       when('/', {
-        templateUrl: 'templates/hello.html'
+        templateUrl: 'templates/hello.html',
+        controller: 'HelloControl'
       }).
       when('/test', {
         templateUrl: 'templates/test.html'
