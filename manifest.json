@@ -7,6 +7,7 @@
     "bower_components/angular-aria/angular-aria.min.js",
     "bower_components/hammerjs/hammer.min.js",
     "bower_components/angular-material/angular-material.min.js",
+    "bower_components/skrollr/dist/skrollr.min.js",
     "app/js/modules.js",
     "app/js/**/*.js"
   ],
