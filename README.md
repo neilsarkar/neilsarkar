@@ -14,3 +14,4 @@ You love it.
 * pick up changes to manifest.json and reload appropriately
 * don't blow up on scss errors
 * rename app.js to avoid tab issue in terminal with 'app'
+* don't require dist prefix for images

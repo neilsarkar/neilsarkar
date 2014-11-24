@@ -1,4 +1,11 @@
 a {cursor: pointer}
-html, body, div[ng-view], md-content { height: 100% }
-md-content {overflow: auto }
-section {}
+html, body, div[ng-view] { height: 100% }
+img { max-width: 100% }
+
+@media (min-width: 720px) {
+  section {
+    max-height: 100%;
+    overflow: hidden;
+    .image { max-width: 40%; margin-right: 5% }
+  }
+}

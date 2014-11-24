@@ -1,5 +1,5 @@
 angular.module('neil').controller('HelloControl', [
   function() {
-    skrollr.init()
+    // skrollr.init({forceHeight: false})
   }
 ])
