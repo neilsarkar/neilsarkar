@@ -1,11 +1,11 @@
-<div layout="column">
+<md-content>
+  <md-subheader>Hello, World.</md-subheader>
   <section>
-    <md-subheader>Hello, World.</md-subheader>
     <div layout layout-phone="column">
       <div>
         <img src="/dist/images/headshot.jpg" />
       </div>
-      <div flex layout-padding>
+      <div flex layout-padding layout="column" layout-align="center">
         <h1>Hello, World.</h1>
         <h2>I'm Neil.</h2>
         <h2>I'm a full stack engineer.</h2>
@@ -15,16 +15,37 @@
     </div>
   </section>
 
+  <md-subheader>Stuff I made.</md-subheader>
   <section>
-    <md-subheader>Stuff I made.</md-subheader>
     <div layout="row">
       <div>
-        <img src="/dist/images/headshot.jpg" />
+        <img src="http://placehold.it/200x500" />
       </div>
       <div flex layout-padding>
-        <p>
-          I built the <a href="https://groupme.com">GroupMe</a> and <a href="https://splice.com">Splice</a> web apps.
-        </p>
+        <h2>Splice</h2>
+
+        <a href="https://splice.com/henryfong/henry-fong-j-trick-scream-original-mix/3CB336B8-71CB-4366-86FD-1D18E60F5594/dna">
+          <img src="" />
+        </a>
+
+        <p>I took over a prototype of Splice built in rails, and implemented a custom jquery bridge to allow an easy transition to angular.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div layout="row">
+      <div>
+        <img src="http://placehold.it/200x500" />
+      </div>
+      <div flex layout-padding>
+        <h2>GroupMe</h2>
+
+        <a href="https://groupme.com">
+          <img src="http://placehold.it/1600x800" />
+        </a>
+
+        <p>I worked at GroupMe for three years and met many of my current best friends there. I came on before the acquisition and supported all parts of the application, from messaging to registering on the website. I then wrote the first version of the web app in rails before pulling it apart to make one in backbone and then one in angular.</p>
       </div>
     </div>
   </section>
@@ -33,12 +54,15 @@
     <md-subheader>Improv</md-subheader>
     <div layout="row">
       <div>
-        <img src="/dist/images/headshot.jpg" />
+        <img src="/dist/images/footage-not-found.jpg" />
       </div>
       <div flex layout-padding>
-        <p>
-          I've been doing improv comedy for the last 4 years. There is no record of this.
-        </p>
+        <h2>
+          I've been doing improv comedy for the last 4 years.
+        </h2>
+        <h2>
+          There is no record of this.
+        </h2>
       </div>
     </div>
   </section>
@@ -47,12 +71,15 @@
     <md-subheader>Running</md-subheader>
     <div layout="row">
       <div>
-        <img src="/dist/images/headshot.jpg" />
+        <img src="/dist/images/marathon.jpg" />
       </div>
       <div flex layout-padding>
-        <p>
-          I've run the New York and Los Angeles Marathon.
-        </p>
+        <h2>
+          I've run the New York and Los Angeles Marathons.
+        </h2>
+        <h2>
+          The crowds irritated me by the last few miles.
+        </h2>
       </div>
     </div>
   </section>
@@ -67,14 +94,13 @@
         <p>
           <ul>
             <li>highlight by subtraction</li>
-            <li>visual hardware vs software</li>
-            <li>you should be able to delete anything you create</li>
-            <li>build the mobile experience first and think of your desktop app as progressive enhancement</li>
-            <li>if you do something non-standard, you better have a damn good reason</li>
             <li>feed the lizard brain</li>
+            <li>highlight differences</li>
+            <li>visual hardware vs software</li>
+            <li>reversible actions > tutorials</li>
+            <li>mobile first</li>
+            <li>standards</li>
           </ul>
-
-          I believe in brevity. I believe in respecting the precious milliseconds that people choose to spend on your app. I believe in deletion.
         </p>
       </div>
     </div>
@@ -98,6 +124,43 @@
             <li>explicit over implicit</li>
             <li>composability over inheritance</li>
             <li>reusable components</li>
+            <li>generate three options before choosing one</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <md-subheader>Development Principles</md-subheader>
+    <div layout="row">
+      <div>
+        <img src="/dist/images/headshot.jpg" />
+      </div>
+      <div flex layout-padding>
+        <p>
+          <ul>
+            <li>get it green, then make it clean</li>
+            <li>reproduce locally</li>
+            <li>shortest possible debugging feedback loop</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <md-subheader>Refactoring principles</md-subheader>
+    <div layout="row">
+      <div>
+        <img src="/dist/images/headshot.jpg" />
+      </div>
+      <div flex layout-padding>
+        <p>
+          <ul>
+            <li>make the hard changes now so the next change will be easy</li>
+            <li>document everything</li>
+            <li>stay one step from green</li>
           </ul>
         </p>
       </div>
@@ -117,4 +180,4 @@
       </div>
     </div>
   </section>
-</div>
+</md-content>
