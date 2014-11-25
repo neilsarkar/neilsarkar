@@ -1,5 +1,4 @@
 a {cursor: pointer}
-html, body, div[ng-view] { height: 100% }
 img { max-width: 100% }
 
 dt {
@@ -11,6 +10,7 @@ dt {
 }
 
 @media (min-width: 720px) {
+  html, body, div[ng-view] { height: 100% }
   section {
     max-height: 100%;
     overflow: hidden;
