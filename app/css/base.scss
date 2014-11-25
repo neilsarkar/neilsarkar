@@ -2,6 +2,14 @@ a {cursor: pointer}
 html, body, div[ng-view] { height: 100% }
 img { max-width: 100% }
 
+dt {
+  margin-top: 1em;
+  font-weight: bold;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 @media (min-width: 720px) {
   section {
     max-height: 100%;

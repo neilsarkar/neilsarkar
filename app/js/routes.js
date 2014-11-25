@@ -7,8 +7,9 @@ angular.module('neil').config([
         templateUrl: 'templates/hello.html',
         controller: 'HelloControl'
       }).
-      when('/test', {
-        templateUrl: 'templates/test.html'
+      when('/staging', {
+        templateUrl: 'templates/staging.html',
+        controller: 'HelloControl'
       }).
       otherwise({
         redirectTo: '/'
