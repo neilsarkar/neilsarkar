@@ -3,14 +3,47 @@
 <head>
   <title>Neil Sarkar: Over the top chill</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <link href="/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
   <link href="/dist/application.css" rel="stylesheet"/>
 </head>
 
-<body ng-app="neil">
-  <div id="skrollr-body" ng-view></div>
+<body ng-app>
+  <div class="slide-bg" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#hello">
+    <img src="/dist/images/headshot.jpg" />
+  </div>
+  <div class="slide-bg" data-0="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#improv">
+    <img src="/dist/images/footage-not-found.jpg" />
+  </div>
+  <div class="slide-bg" data-0="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#running">
+    <img src="/dist/images/marathon.jpg" />
+  </div>
+
+  <div id="skrollr-body" ng-view>
+    <div id="hello" class="slide">
+      <h1>Hello, World.</h1>
+      <h2>I'm Neil.</h2>
+      <h2>I'm a full stack engineer.</h2>
+      <h2>I'm extraordinarily chill.</h2>
+    </div>
+
+    <div id="improv" class="slide">
+      <h2>
+        I've been doing improv comedy for the last 4 years.
+      </h2>
+      <h2>
+        There is no record of this.
+      </h2>
+    </div>
+
+    <div id="running" class="slide">
+      <h2>
+        I've run the New York and Los Angeles Marathons.
+      </h2>
+    </div>
+  </div>
 
   <script type="text/javascript" src="/dist/application.js"></script>
+  <script>skrollr.init()</script>
 </body>
 </html>
