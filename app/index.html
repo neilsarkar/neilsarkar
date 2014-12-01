@@ -9,14 +9,11 @@
 </head>
 
 <body ng-app>
-  <div class="slide-bg" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#hello">
-    <img src="/dist/images/headshot.jpg" />
+  <div class="slide-bg" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#hello" style="background-image: url(/dist/images/headshot.jpg)">
   </div>
-  <div class="slide-bg" data-0="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#improv">
-    <img src="/dist/images/footage-not-found.jpg" />
+  <div class="slide-bg" data-0="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" style="background-image: url(/dist/images/footage-not-found.jpg)" data-anchor-target="#improv">
   </div>
-  <div class="slide-bg" data-0="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#running">
-    <img src="/dist/images/marathon.jpg" />
+  <div class="slide-bg" data-0="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" style="background-image: url(/dist/images/marathon.jpg)" data-anchor-target="#running">
   </div>
 
   <div id="skrollr-body" ng-view>
