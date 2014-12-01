@@ -9,12 +9,14 @@
 </head>
 
 <body ng-app>
-  <div class="slide-bg" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#hello" style="background-image: url(/dist/images/headshot.jpg)">
-  </div>
-  <div class="slide-bg" data-0="opacity: 0" data-top-bottom="opacity: 0" data-top="opacity: 1" style="background-image: url(/dist/images/footage-not-found.jpg)" data-anchor-target="#improv">
-  </div>
- <div class="slide-bg" data-0="opacity: 0" data-1-top="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" style="background-image: url(/dist/images/marathon.jpg)" data-anchor-target="#running">
-  </div>
+  <div class="slide-bg" data-top="opacity: 1" data-top-bottom="opacity: 0" data-anchor-target="#hello" style="background-image: url(/dist/images/headshot.jpg)"></div>
+  <div class="slide-bg" data-0="opacity: 0" data-top-bottom="opacity: 0" data-top="opacity: 1" style="background-image: url(/dist/images/footage-not-found.jpg)" data-anchor-target="#improv"></div>
+ <div class="slide-bg" data-0="opacity: 0" data-1-top="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" style="background-image: url(/dist/images/marathon.jpg)" data-anchor-target="#running"></div>
+ <div class="slide-bg" data-0="opacity: 0" data-1-top="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" style="background-image: url(/dist/images/dont-make-me-think.jpg)" data-anchor-target="#ux-principles"></div>
+ <div class="slide-bg" data-0="opacity: 0" data-1-top="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" style="background-image: url(/dist/images/architecture.png)" data-anchor-target="#architecture-principles"></div>
+ <div class="slide-bg" data-0="opacity: 0" data-1-top="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" style="background-image: url(/dist/images/development.png)" data-anchor-target="#development-principles"></div>
+ <div class="slide-bg" data-0="opacity: 0" data-1-top="opacity: 0" data-top="opacity: 1" data-top-bottom="opacity: 0" style="background-image: url(/dist/images/headshot.png)" data-anchor-target="#personal-brand-lol"></div>
+
 
   <div id="skrollr-body" ng-view>
     <div id="hello" class="slide">
@@ -38,6 +40,151 @@
         I've run the New York and Los Angeles Marathons.
       </h2>
     </div>
+
+    <div id="splice" class="slide">
+      <h2>I work at Splice.</h2>
+
+      <a href="https://splice.com/henryfong/henry-fong-j-trick-scream-original-mix/3CB336B8-71CB-4366-86FD-1D18E60F5594/dna">
+        <img src="/dist/images/splice-dna-player.png" />
+      </a>
+
+      <p>I'm responsible for the website...everything from UX to scaling to building to testing.</p>
+    </div>
+
+    <div id="groupme" class="slide">
+      <h2>I used to work at GroupMe.</h2>
+
+      <a href="https://groupme.com">
+        <img src="/dist/images/groupme.png" />
+      </a>
+
+      <p>I worked at GroupMe for three years and met many of my current best friends there. I came on before the acquisition. I made the website! Three times, actually. First in rails, then in backbone, and finally in angular.</p>
+    </div>
+
+    <div id="ux-principles" class="slide">
+      <dl>
+        <dt>Feed the lizard brain.</dt>
+        <dd>
+          You created your product with your neocortex, but it is being received by a busy person's animal brain.
+        </dd>
+
+        <dt>
+          Mobile first.
+        </dt>
+        <dd>
+          If your flows aren't clear enough to work on a small screen, you have problems that media queries won't fix.
+        </dd>
+
+        <dt>
+          Highlight by subtraction.
+        </dt>
+
+        <dt>Prefer individuality.</dt>
+        <dd>
+          One performant, bug-free, unique feature is worth a thousand me-too façades.
+        </dd>
+
+        <dt>Visual communication > words.</dt>
+        <dd>
+          Image processing is hardware: it's as old as the first organism with a retina.
+          <br />
+          Language comprehension is software: it requires more brain cycles.
+        </dd>
+
+        <dt>
+          Make primary actions easy to do and easy to undo.
+        </dt>
+        <dd>
+          Encouraging risk-free experimentation on your platform will educate people better than any tutorial you can contrive.
+        </dd>
+      </dl>
+    </div>
+
+    <div id="architecture-principles" class="slide">
+      <dl>
+        <dt>Single responsibility principle.</dt>
+        <dd>
+          11 people doing one thing very well win super bowls.
+          <br />
+          11 quarterbacks are just going to get sacked a whole lot.
+        </dd>
+
+        <dt>Duplicate and then abstract.</dt>
+        <dd>
+          If it looks like a duck and quacks like a duck, it might still be a goose.
+          <br />
+          <br />
+          "It's much harder to change an abstraction that's wrong than to eliminate duplication." - Sandi Metz
+        </dd>
+
+        <dt>Explicit over implicit, at first.</dt>
+        <dd>
+          An explicit API has a wider surface area and is more resistant to change. As your objects mature, it usually makes sense to provide implicit calls with sensible defaults.
+        </dd>
+
+        <dt>Composability over inheritance.</dt>
+        <dd>
+          Don't you wish you could just pick and choose your parent's characteristics that you wanted? Instead of just getting everything they had whether you want it or not?
+        </dd>
+
+        <dt>Generate three options before choosing one.</dt>
+        <dd>
+          When you say them out loud, you'll be shocked at how often your best idea was a throwaway option.
+        </dd>
+
+        <dt>Ask yourself: what requested change will undo all of this work?</dt>
+        <dd>
+          Every move you make comes with a tradeoff. Be cognizant of the corners you're painting yourself into.
+        </dd>
+      </dl>
+    </div>
+
+    <div id="development-principles" class="slide">
+      <dl>
+        <dt>Get it green, then make it clean.</dt>
+        <dd>
+          Write drunk, edit sober.
+        </dd>
+
+        <dt>Aggressively garbage collect your brain's working memory.</dt>
+        <dd>
+          Leave context in the code, not in your head.
+        </dd>
+
+        <dt>Seek out the shortest possible debugging feedback loop.</dt>
+        <dd>
+          Remember web development pre-firebug? I do. Never again.
+        </dd>
+
+        <dt>Timebox the hard/scary stuff.</dt>
+        <dd>
+          Worth it when you finish fast. Doubly worth it when you don't.
+        </dd>
+
+        <dt>Always reproduce bugs locally.</dt>
+        <dd>
+          The extra time it takes is paid back the next time the thing breaks.
+        </dd>
+
+        <dt>Make regular git checkpoints.</dt>
+        <dd>
+          How much easier are video games where you can save your progress?
+        </dd>
+
+        <dt>
+          Use standards.
+        </dt>
+        <dd>
+          If you're hopping off a giant's shoulders you better have a damn good reason.
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div id="personal-brand-lol" class="slide">
+    <p>
+      I'm on <a href="https://instagram.com/neilsarkar">Instagram</a>, <a href="http://hypem.com/neilsarkar">Hype Machine</a>, <a href="https://twitter.com/neilsarkar">Twitter</a>, <a href="http://dumbchef.tumblr.com">Tumblr</a>, <a href="https://www.facebook.com/awesomeneil">Facebook</a>, <a href="https://github.com/neilsarkar">GitHub</a> and Tinder.
+    </p>
   </div>
 
   <script type="text/javascript" src="/dist/application.js"></script>
