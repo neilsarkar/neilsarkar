@@ -11,6 +11,10 @@ angular.module('neil').config([
         templateUrl: 'templates/staging.html',
         controller: 'HelloControl'
       }).
+      when('/scratch', {
+        templateUrl: 'templates/scratch.html',
+        controller: 'HelloControl'
+      }).
       otherwise({
         redirectTo: '/'
       })
