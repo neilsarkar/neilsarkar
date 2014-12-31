@@ -9,9 +9,8 @@ You love it.
 * don't require browsersync in production
 * don't recompile scripts when html changes
 * fix underscore.min.map
-* angular-material
 * move dist out of app folder
 * pick up changes to manifest.json and reload appropriately
-* don't blow up on scss errors
 * rename app.js to avoid tab issue in terminal with 'app'
 * don't require dist prefix for images
+* keep watching scss after a syntax error

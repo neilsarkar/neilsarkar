@@ -1,17 +1,65 @@
 h1, h2 {
   color: white;
-  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 5px rgba(0,0,0,0.7);
+  font-family: impact;
+  text-transform: uppercase;
   &:first-child { margin-top: 0 }
 }
 
-.slide {
-  background-size: cover;
+.m-slide {
   height: 100%;
-  background-repeat: no-repeat;
   padding: 0 1em;
   display: block;
   width: 100%;
+  position: relative;
+  > * { z-index: 2; position: relative; }
+  &.l-centered {
+    display: table;
+    > * { display: table-cell; vertical-align: middle }
+  }
+  .image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    display: block;
+    top: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.filtered {
+      -webkit-filter: blur(5px);
+      transition: 2s -webkit-filter linear;
+    }
+    &.superfiltered {
+      -webkit-filter: blur(90px)
+    }
+  }
 }
+
+.l-centered {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+.l-top {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 1em;
+  left: 0;
+}
+.l-bottom {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 1em;
+  left: 0;
+}
+
+// TODO: remove scaffolding
+.done { text-decoration: line-through; }
+.filtered { -webkit-filter: blur(12px); }
 
 #progress {
   position: fixed;
