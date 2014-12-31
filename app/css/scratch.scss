@@ -63,9 +63,29 @@
   left: 0;
 }
 
-// TODO: remove scaffolding
-.done { text-decoration: line-through; color: red !important; }
-.filtered { -webkit-filter: blur(12px); }
+.m-social {
+  list-style: none;
+  color: white;
+  i { width: 20px; }
+  a {
+    color: white; text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.m-button {
+  text-decoration: none;
+  background-color: white;
+  border-radius: 10px;
+  padding: .2em .5em;
+  color: #333;
+  text-shadow: none;
+  &:hover {
+    box-shadow: 0 3px 10px 2px pink;
+  }
+}
 
 #progress {
   position: fixed;
