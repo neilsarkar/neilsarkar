@@ -14,3 +14,5 @@ You love it.
 * rename app.js to avoid tab issue in terminal with 'app'
 * don't require dist prefix for images
 * keep watching scss after a syntax error
+* hitting enter while watching should kick off a manual build
+* performance on blur filter
