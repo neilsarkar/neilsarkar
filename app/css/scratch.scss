@@ -57,7 +57,7 @@
 }
 
 // TODO: remove scaffolding
-.done { text-decoration: line-through; }
+.done { text-decoration: line-through; color: red !important; }
 .filtered { -webkit-filter: blur(12px); }
 
 #progress {
