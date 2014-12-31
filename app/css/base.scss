@@ -9,11 +9,4 @@ dt {
   }
 }
 
-@media (min-width: 720px) {
-  html, body, div[ng-view] { height: 100% }
-  section {
-    max-height: 100%;
-    overflow: hidden;
-    .image { max-width: 40%; margin-right: 5% }
-  }
-}
+html, body, div[ng-view] { height: 100% }

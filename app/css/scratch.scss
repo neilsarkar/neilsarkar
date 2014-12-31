@@ -19,6 +19,7 @@
     bottom: 0;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     background-attachment: fixed;
   }
   h1, h2 {
@@ -26,6 +27,7 @@
     text-shadow: 0 1px 5px rgba(0,0,0,0.7);
     font-family: impact;
     text-transform: uppercase;
+    font-size: 50px;
     &:first-child { margin-top: 0 }
   }
   p {
