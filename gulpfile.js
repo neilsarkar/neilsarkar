@@ -14,7 +14,7 @@ gulp.task('js', function() {
 
 gulp.task('css', function() {
   return gulp.src(paths.css).
-    pipe(sass()).on('error', function(err) { console.error(err.message) }).
+    pipe(sass()).on('error', function(err) { console.error(err.message); this.emit('end'); }).
     pipe(concat('application.css')).
     pipe(gulp.dest('app/dist/')).
     pipe(browserSync.reload({stream: true}));
