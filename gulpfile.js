@@ -35,7 +35,7 @@ gulp.task('watch', function() {
 
 gulp.task('server', function() {
   server.run({
-    file: 'app.js'
+    file: 'index.js'
   })
 
   browserSync({
@@ -43,7 +43,7 @@ gulp.task('server', function() {
     port: 5000
   })
 
-  gulp.watch(['app.js'], [server.run])
+  gulp.watch(['index.js'], [server.run])
 })
 
 gulp.task('build', ['js', 'css', 'img'])
