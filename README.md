@@ -6,7 +6,7 @@ You love it.
 
 *Sawdust*
 
-* restart automatically when gulpfile is changed -- need docs on forking
+* restart automatically when gulpfile is changed
 * fix .min.map on bower files -- use unminified versions and minify everything together
 * prod enhancements:
   * uglify
