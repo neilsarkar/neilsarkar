@@ -15,20 +15,25 @@ function readPaths() {
 gulp.task('js', function() {
   return gulp.src(paths.js).
     pipe(concat('application.js')).
-    pipe(gulp.dest('app/dist/'));
+    pipe(gulp.dest('dist/'));
 });
 
 gulp.task('css', function() {
   return gulp.src(paths.css).
     pipe(sass()).on('error', function(err) { console.error("SCSS compile error:" + err.message); this.emit('end'); }).
     pipe(concat('application.css')).
-    pipe(gulp.dest('app/dist/')).
+    pipe(gulp.dest('dist/')).
     pipe(browserSync.reload({stream: true}));
 })
 
 gulp.task('img', function() {
-  return gulp.src(paths.img).
-    pipe(gulp.dest('app/dist/images/'))
+  return gulp.src(paths.img, {base: 'app/img/'}).
+    pipe(gulp.dest('dist/images/'))
+})
+
+gulp.task('html', function() {
+  return gulp.src(paths.html, {base: 'app/'}).
+    pipe(gulp.dest('dist'));
 })
 
 // Watches asset paths and reloads browser on changes
@@ -57,7 +62,7 @@ gulp.task('watch', function() {
   function setWatchers() {
     gulp.watch(paths.js, ['js', browserSync.reload])
     gulp.watch(paths.css, ['css'])
-    gulp.watch(paths.html, ['js', browserSync.reload])
+    gulp.watch(paths.html, ['html', 'js', browserSync.reload])
     gulp.watch(paths.img, ['js', browserSync.reload])
   }
 })
@@ -75,5 +80,5 @@ gulp.task('server', function() {
   gulp.watch(['index.js'], [server.run])
 })
 
-gulp.task('build', ['js', 'css', 'img'])
+gulp.task('build', ['js', 'img', 'css', 'html'])
 gulp.task('default', ['build', 'server', 'watch'])

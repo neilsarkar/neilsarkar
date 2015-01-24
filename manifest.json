@@ -9,6 +9,7 @@
   ],
   "css": [
     "bower_components/normalize.css/normalize.css",
+    "bower_components/fontawesome/css/font-awesome.min.css",
     "app/css/**/*.scss"
   ],
   "html": [
