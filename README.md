@@ -13,3 +13,4 @@ You love it.
   * imagemin
   * sourcemaps
   * fingerprint
+* shared routes between index.js and router.js -- browserify?

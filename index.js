@@ -3,7 +3,6 @@ var app = express()
 
 app.use(express.static(__dirname + '/dist'))
 app.use(express.static(__dirname + '/public'))
-app.use(express.static(__dirname + '/bower_components'))
 
 var server = app.listen(process.env.PORT || 3000, function () {
   var host = server.address().address
