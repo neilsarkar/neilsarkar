@@ -4,7 +4,13 @@ var gulp = require('gulp'),
     server = require('gulp-express'),
     browserSync = require('browser-sync'),
     fs = require('fs'),
-    paths = JSON.parse(fs.readFileSync('./manifest.json', 'utf8'));
+    paths;
+
+// read paths on load
+readPaths()
+function readPaths() {
+  return paths = JSON.parse(fs.readFileSync('./manifest.json', 'utf8'))
+}
 
 gulp.task('js', function() {
   return gulp.src(paths.js).
@@ -14,7 +20,7 @@ gulp.task('js', function() {
 
 gulp.task('css', function() {
   return gulp.src(paths.css).
-    pipe(sass()).on('error', function(err) { console.error(err.message); this.emit('end'); }).
+    pipe(sass()).on('error', function(err) { console.error("SCSS compile error:" + err.message); this.emit('end'); }).
     pipe(concat('application.css')).
     pipe(gulp.dest('app/dist/')).
     pipe(browserSync.reload({stream: true}));
@@ -25,12 +31,29 @@ gulp.task('img', function() {
     pipe(gulp.dest('app/dist/images/'))
 })
 
+// Watches asset paths and reloads browser on changes
 gulp.task('watch', function() {
-  gulp.watch(paths.js, ['js', browserSync.reload])
-  gulp.watch(paths.css, ['css'])
-  // TODO: don't compile js. if we remove this, browsersync behaves strangely.
-  gulp.watch(paths.html, ['js', browserSync.reload])
-  gulp.watch(paths.img, ['js', browserSync.reload])
+  setWatchers()
+
+  // Restart process when gulpfile is changed
+  gulp.watch('gulpfile.js', function() {
+    console.log("Gulpfile changed, you should restart")
+    process.exit(0)
+  })
+
+  // Reset paths and watchers when manifest.json is changed
+  gulp.watch('manifest.json', function() {
+    readPaths()
+    setWatchers()
+  })
+
+  // (Re)sets watchers
+  function setWatchers() {
+    gulp.watch(paths.js, ['js', browserSync.reload])
+    gulp.watch(paths.css, ['css'])
+    gulp.watch(paths.html, ['js', browserSync.reload])
+    gulp.watch(paths.img, ['js', browserSync.reload])
+  }
 })
 
 gulp.task('server', function() {
