@@ -47,6 +47,12 @@ gulp.task('watch', function() {
     setWatchers()
   })
 
+  process.stdin.on('data', function(line) {
+    if( line.toString() === "\n" ) {
+      gulp.run('build')
+    }
+  })
+
   // (Re)sets watchers
   function setWatchers() {
     gulp.watch(paths.js, ['js', browserSync.reload])
