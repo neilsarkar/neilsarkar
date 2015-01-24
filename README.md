@@ -6,9 +6,10 @@ You love it.
 
 *Sawdust*
 
-* restart automatically when gulpfile is changed
-* don't require browsersync in production
-* don't recompile scripts when html changes
-* fix underscore.min.map
-* performance on blur filter
-* imagemin
+* restart automatically when gulpfile is changed -- need docs on forking
+* fix .min.map on bower files -- use unminified versions and minify everything together
+* prod enhancements:
+  * uglify
+  * imagemin
+  * sourcemaps
+  * fingerprint

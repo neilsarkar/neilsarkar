@@ -1,8 +1,6 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
-    server = require('gulp-express'),
-    browserSync = require('browser-sync'),
     fs = require('fs'),
     paths;
 
@@ -28,7 +26,7 @@ gulp.task('css', function() {
 
 gulp.task('img', function() {
   return gulp.src(paths.img, {base: 'app/img/'}).
-    pipe(gulp.dest('dist/images/'))
+    pipe(gulp.dest('dist/images/'));
 })
 
 gulp.task('html', function() {
@@ -36,49 +34,54 @@ gulp.task('html', function() {
     pipe(gulp.dest('dist'));
 })
 
-// Watches asset paths and reloads browser on changes
-gulp.task('watch', function() {
-  setWatchers()
+gulp.task('build', ['js', 'img', 'css', 'html'])
 
-  // Restart process when gulpfile is changed
-  gulp.watch('gulpfile.js', function() {
-    console.log("Gulpfile changed, you should restart")
-    process.exit(0)
-  })
+if( !process.env.NODE_ENV || process.env.NODE_ENV == 'development' ) {
+  var server = require('gulp-express'),
+      browserSync = require('browser-sync');
 
-  // Reset paths and watchers when manifest.json is changed
-  gulp.watch('manifest.json', function() {
-    readPaths()
+  // Watches asset paths and reloads browser on changes
+  gulp.task('watch', function() {
     setWatchers()
-  })
 
-  process.stdin.on('data', function(line) {
-    if( line.toString() === "\n" ) {
-      gulp.run('build')
+    // Restart process when gulpfile is changed
+    gulp.watch('gulpfile.js', function() {
+      console.log("Gulpfile changed, you should restart")
+      process.exit(0)
+    })
+
+    // Reset paths and watchers when manifest.json is changed
+    gulp.watch('manifest.json', function() {
+      readPaths()
+      setWatchers()
+    })
+
+    process.stdin.on('data', function(line) {
+      if( line.toString() === "\n" ) {
+        gulp.run('build')
+      }
+    })
+
+    // (Re)sets watchers
+    function setWatchers() {
+      gulp.watch(paths.js, ['js', browserSync.reload])
+      gulp.watch(paths.css, ['css']) // browserSync automatically reloads
+      gulp.watch(paths.html, ['html', browserSync.reload])
+      gulp.watch(paths.img, ['img', browserSync.reload])
     }
   })
 
-  // (Re)sets watchers
-  function setWatchers() {
-    gulp.watch(paths.js, ['js', browserSync.reload])
-    gulp.watch(paths.css, ['css'])
-    gulp.watch(paths.html, ['html', 'js', browserSync.reload])
-    gulp.watch(paths.img, ['js', browserSync.reload])
-  }
-})
+  gulp.task('server', function() {
+    server.run({
+      file: 'index.js'
+    })
 
-gulp.task('server', function() {
-  server.run({
-    file: 'index.js'
+    browserSync({
+      proxy: 'localhost:3000',
+      port: 5000
+    })
+
+    gulp.watch(['index.js'], [server.run])
   })
-
-  browserSync({
-    proxy: 'localhost:3000',
-    port: 5000
-  })
-
-  gulp.watch(['index.js'], [server.run])
-})
-
-gulp.task('build', ['js', 'img', 'css', 'html'])
-gulp.task('default', ['build', 'server', 'watch'])
+  gulp.task('default', ['build', 'server', 'watch'])
+}
