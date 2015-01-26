@@ -6,6 +6,10 @@ angular.module('neil').config([
         templateUrl: 'templates/hello.html',
         controller: 'HelloControl'
       }).
+      when('/chart', {
+        templateUrl: 'templates/chart.html',
+        controller: 'ChartControl'
+      }).
       otherwise({
         redirectTo: '/'
       })

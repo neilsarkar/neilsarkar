@@ -1,9 +1,10 @@
 {
   "js": [
-    "bower_components/angular/angular.min.js",
-    "bower_components/angular-route/angular-route.min.js",
-    "bower_components/underscore/underscore.min.js",
-    "bower_components/skrollr/dist/skrollr.min.js",
+    "bower_components/angular/angular.js",
+    "bower_components/angular-route/angular-route.js",
+    "bower_components/underscore/underscore.js",
+    "bower_components/skrollr/dist/skrollr.js",
+    "bower_components/d3/d3.js",
     "app/js/modules.js",
     "app/js/**/*.js"
   ],
