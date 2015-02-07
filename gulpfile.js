@@ -24,7 +24,7 @@ gulp.task('css', function() {
 
   return browserSync ?
     stream.pipe(browserSync.reload({stream: true})) :
-    steam;
+    stream;
 })
 
 gulp.task('img', function() {
