@@ -17,11 +17,14 @@ gulp.task('js', function() {
 });
 
 gulp.task('css', function() {
-  return gulp.src(paths.css).
+  var stream = gulp.src(paths.css).
     pipe(sass()).on('error', function(err) { console.error("SCSS compile error:" + err.message); this.emit('end'); }).
     pipe(concat('application.css')).
-    pipe(gulp.dest('dist/')).
-    pipe(browserSync.reload({stream: true}));
+    pipe(gulp.dest('dist/'));
+
+  return browserSync ?
+    stream.pipe(browserSync.reload({stream: true})) :
+    steam;
 })
 
 gulp.task('img', function() {
