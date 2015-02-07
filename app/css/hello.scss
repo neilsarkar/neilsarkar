@@ -108,4 +108,10 @@
 
 .t-professional {
   font-family: 'Source Sans Pro', helvetica, arial, sans-serif;
+  background-color: #665884;
+  dt { margin-top: 1em; &:first-child { margin-top: 0; }}
+  h3 { color: #fcf8f5; text-transform: uppercase; font-size: 12px;}
+  a { color: #5ae0ef; text-decoration: none; &:hover {text-decoration: underline; } }
+  dd { color: #a094ad; margin-left: 0;}
+  ul { padding-left: 0; }
 }
